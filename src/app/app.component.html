@@ -1,0 +1,23 @@
+<div>
+	<form [formGroup]="userForm" (ngSubmit)="updateResult()">
+		<div class="field">
+			<label for="firstName">First Name:</label>
+			<input type="text" id="firstName" formControlName="firstName" />
+        </div>
+			<div class="field">
+				<label for="firstName">Last Name: </label>
+				<input type="text" id="lastName" formControlName="lastName" />
+        </div>
+				<div class="field">
+					<label for="firstName">Phone #:</label>
+					<input type="text" id="phone" formControlName="phone"/>
+        </div>
+					<button [disabled]="!userForm?.valid">Save</button>
+	</form>
+
+	<div class="display">
+		<h2>Results:</h2>
+		<div><strong>Name:</strong> <i>{{formValues?.firstName}} {{formValues?.lastName}}</i></div>
+		<div><strong>Phone:</strong> <i>{{formValues?.phone}}</i></div>
+	</div>
+</div>
